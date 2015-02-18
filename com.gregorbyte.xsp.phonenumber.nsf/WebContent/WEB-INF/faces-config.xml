@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config/>
+<faces-config>
+	<converter>
+		<converter-id>gregorbyte.PhoneNumberConverter
+		</converter-id>
+		<converter-class>com.gregorbyte.xsp.converter.PhoneNumberConverter
+		</converter-class>
+	</converter>
+</faces-config>
