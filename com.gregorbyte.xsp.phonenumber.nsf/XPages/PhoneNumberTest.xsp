@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:label value="Phone Number" id="label1" for="inputText1"></xp:label>
+
+	<xp:inputText id="inputText1" value="#{viewScope.phoneNumber}">
+		<xp:this.converter>
+			<xp:converter converterId="gregorbyte.PhoneNumberConverter">
+			</xp:converter>
+		</xp:this.converter>
+	</xp:inputText>
+
+	<xp:message id="message1" for="inputText1"></xp:message>
+
+	<xp:button value="Submit" id="button1">
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="complete">
+		</xp:eventHandler>
+	</xp:button>
+
+</xp:view>
