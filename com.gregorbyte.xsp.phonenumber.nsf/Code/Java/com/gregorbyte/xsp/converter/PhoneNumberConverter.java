@@ -1,10 +1,8 @@
 package com.gregorbyte.xsp.converter;
 
 import javax.faces.application.FacesMessage;
-import javax.faces.component.StateHolder;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 
 import com.google.i18n.phonenumbers.NumberParseException;
@@ -12,8 +10,9 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.ibm.commons.util.StringUtil;
+import com.ibm.xsp.converter.AbstractConverter;
 
-public class PhoneNumberConverter implements Converter, StateHolder {
+public class PhoneNumberConverter extends AbstractConverter {
 
 	private String defaultCountryCode = null;
 	
