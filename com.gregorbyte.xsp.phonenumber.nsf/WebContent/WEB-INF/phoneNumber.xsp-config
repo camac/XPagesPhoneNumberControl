@@ -16,6 +16,18 @@
 		<converter-class>com.gregorbyte.xsp.converter.PhoneNumberConverter
 		</converter-class>
 
+		<property>
+			<description>The default Country code to be used if the user does
+				not specify one</description>
+			<display-name>Default Country Code</display-name>
+			<property-name>defaultCountryCode</property-name>
+			<property-class>java.lang.String</property-class>
+			<property-extension>
+				<allow-run-time-binding>false</allow-run-time-binding>
+			</property-extension>
+
+		</property>
+
 		<converter-extension>
 			<tag-name>convertPhoneNumber</tag-name>
 		</converter-extension>
