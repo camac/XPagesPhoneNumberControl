@@ -7,4 +7,19 @@
 		<default-prefix>gb</default-prefix>
 	</faces-config-extension>
 
+	<converter>
+		<description>Converts a String into an Phone Number in
+			International Format</description>
+		<display-name>Phone Number Converter</display-name>
+		<converter-id>gregorbyte.PhoneNumberConverter
+		</converter-id>
+		<converter-class>com.gregorbyte.xsp.converter.PhoneNumberConverter
+		</converter-class>
+
+		<converter-extension>
+			<tag-name>convertPhoneNumber</tag-name>
+		</converter-extension>
+
+	</converter>
+
 </faces-config>
