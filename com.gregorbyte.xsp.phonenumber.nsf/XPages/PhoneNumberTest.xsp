@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:gb="http://www.gregorbyte.com/xsp/">
 
 	<xp:label value="Phone Number" id="label1" for="inputText1"></xp:label>
 
 	<xp:inputText id="inputText1" value="#{viewScope.phoneNumber}">
 		<xp:this.converter>
-			<xp:converter converterId="gregorbyte.PhoneNumberConverter">
-			</xp:converter>
+			<gb:convertPhoneNumber></gb:convertPhoneNumber>
 		</xp:this.converter>
 	</xp:inputText>
 
