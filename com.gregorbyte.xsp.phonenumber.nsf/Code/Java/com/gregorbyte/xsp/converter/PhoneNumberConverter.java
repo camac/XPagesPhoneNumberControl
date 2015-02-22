@@ -1,6 +1,7 @@
 package com.gregorbyte.xsp.converter;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.component.StateHolder;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -12,7 +13,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.ibm.commons.util.StringUtil;
 
-public class PhoneNumberConverter implements Converter {
+public class PhoneNumberConverter implements Converter, StateHolder {
 
 	private String defaultCountryCode = null;
 	
@@ -78,4 +79,32 @@ public class PhoneNumberConverter implements Converter {
 		this.defaultCountryCode = defaultCountryCode;
 	}
 
+	public boolean isTransient() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void restoreState(FacesContext context, Object object) {
+
+		Object[] state = (Object[])object;
+		
+		this.defaultCountryCode = (String)state[0];
+		
+	}
+
+	public Object saveState(FacesContext arg0) {
+
+		Object[] state = new Object[1];
+		
+		state[0] = this.defaultCountryCode;
+		
+		return state;
+	}
+
+	public void setTransient(boolean arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }
