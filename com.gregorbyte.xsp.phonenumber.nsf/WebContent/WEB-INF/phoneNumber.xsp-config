@@ -23,7 +23,7 @@
 			<property-name>defaultCountryCode</property-name>
 			<property-class>java.lang.String</property-class>
 			<property-extension>
-				<allow-run-time-binding>false</allow-run-time-binding>
+				<allow-run-time-binding>true</allow-run-time-binding>
 			</property-extension>
 
 		</property>
