@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:gb="http://www.gregorbyte.com/xsp/">
 
+	<xp:comboBox id="comboBox1" value="#{viewScope.countryCode}" defaultValue="AU">
+		<xp:selectItem itemLabel="Australia (AU)" itemValue="AU"></xp:selectItem>
+		<xp:selectItem itemLabel="France (FR)" itemValue="FR"></xp:selectItem>
+		<xp:selectItem itemLabel="Singapore (SG)" itemValue="SG"></xp:selectItem>
+		<xp:selectItem itemLabel="United States (US)" itemValue="US"></xp:selectItem>
+		<xp:eventHandler event="onchange" submit="true"
+			refreshMode="partial" refreshId="comboBox1" execMode="partial">
+		</xp:eventHandler>
+	</xp:comboBox>
+
 	<xp:label value="Phone Number" id="label1" for="inputText1"></xp:label>
 
 	<xp:inputText id="inputText1" value="#{viewScope.phoneNumber}">
 		<xp:this.converter>
-			<gb:convertPhoneNumber defaultCountryCode="US"></gb:convertPhoneNumber>
+			<gb:convertPhoneNumber defaultCountryCode="#{viewScope.countryCode}">
+			</gb:convertPhoneNumber>
 		</xp:this.converter>
 	</xp:inputText>
 
