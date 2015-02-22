@@ -4,6 +4,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.ConverterException;
+import javax.faces.el.ValueBinding;
 
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
@@ -69,6 +70,11 @@ public class PhoneNumberConverter extends AbstractConverter {
 		
 		if (this.defaultCountryCode != null) {
 			return this.defaultCountryCode;
+		}
+		
+		ValueBinding vb = getValueBinding("defaultCountryCode");		
+		if (vb != null) {
+			return (String)vb.getValue(getFacesContext());
 		}
 		
 		return "AU";
