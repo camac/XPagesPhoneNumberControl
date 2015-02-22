@@ -14,6 +14,8 @@ import com.ibm.commons.util.StringUtil;
 
 public class PhoneNumberConverter implements Converter {
 
+	private String defaultCountryCode = null;
+	
 	public Object getAsObject(FacesContext context, UIComponent component,
 			String value) {
 
@@ -21,7 +23,7 @@ public class PhoneNumberConverter implements Converter {
 			return value;
 
 		PhoneNumberUtil util = PhoneNumberUtil.getInstance();
-		String defCountryCode = "AU";
+		String defCountryCode = getDefaultCountryCode();
 
 		try {
 
@@ -61,6 +63,19 @@ public class PhoneNumberConverter implements Converter {
 			return null;
 		return value.toString();
 
+	}
+
+	public String getDefaultCountryCode() {
+		
+		if (this.defaultCountryCode != null) {
+			return this.defaultCountryCode;
+		}
+		
+		return "AU";
+	}
+
+	public void setDefaultCountryCode(String defaultCountryCode) {
+		this.defaultCountryCode = defaultCountryCode;
 	}
 
 }
