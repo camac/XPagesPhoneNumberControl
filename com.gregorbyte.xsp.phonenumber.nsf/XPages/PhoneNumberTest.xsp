@@ -5,7 +5,7 @@
 
 	<xp:inputText id="inputText1" value="#{viewScope.phoneNumber}">
 		<xp:this.converter>
-			<gb:convertPhoneNumber></gb:convertPhoneNumber>
+			<gb:convertPhoneNumber defaultCountryCode="US"></gb:convertPhoneNumber>
 		</xp:this.converter>
 	</xp:inputText>
 
