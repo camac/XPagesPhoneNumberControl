@@ -78,32 +78,23 @@ public class PhoneNumberConverter extends AbstractConverter {
 		this.defaultCountryCode = defaultCountryCode;
 	}
 
-	public boolean isTransient() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	public void restoreState(FacesContext context, Object object) {
 
 		Object[] state = (Object[])object;
 		
-		this.defaultCountryCode = (String)state[0];
+		super.restoreState(context, state[0]);
+		this.defaultCountryCode = (String)state[1];
 		
 	}
 
 	public Object saveState(FacesContext arg0) {
 
-		Object[] state = new Object[1];
+		Object[] state = new Object[2];
 		
-		state[0] = this.defaultCountryCode;
+		state[0] = super.saveState(arg0);
+		state[1] = this.defaultCountryCode;
 		
 		return state;
 	}
-
-	public void setTransient(boolean arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 }
